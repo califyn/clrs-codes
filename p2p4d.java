@@ -2,6 +2,7 @@ import java.io.*;
 import java.util.*;
 
 // Solution code for Problem 2.4 in CLRS, 3rd ed.
+// Test hi ! 
 
 public class p2p4d {
   static int cumulative = 0;
