@@ -1,6 +1,8 @@
 import java.io.*;
 import java.util.*;
 
+// Solution code for Problem 2.4 in CLRS, 3rd ed.
+
 public class p2p4d {
   static int cumulative = 0;
   public static int[] merge(int p, int q, int r, int[] arr){

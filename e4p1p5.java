@@ -1,6 +1,8 @@
 import java.io.*;
 import java.util.*;
 
+// Solution code for Exercises 4.1-1 to 4.1-5 in CLRS, 3rd ed.
+
 public class e4p1p5 {
 
   public static int max(int a, int b, int c){
