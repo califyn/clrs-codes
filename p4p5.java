@@ -22,7 +22,9 @@ public class p4p5 {
   }
 
   public static void main(String[] args){
-    int N = 4;
+    System.out.print("Input size: ");
+    Scanner scan = new Scanner(System.in);
+    int N = scan.nextInt();
 
     // Data generation
     boolean[] isGood = new boolean[N];
@@ -36,6 +38,7 @@ public class p4p5 {
     } while (2 * sum <= N);
 
     // Finding one good switch
+    long startTime = System.nanoTime();
     LinkedList<Integer> left = new LinkedList<Integer>();
     int[] results;
     int a, b, good;
@@ -63,6 +66,7 @@ public class p4p5 {
         output[i] = true;
       }
     }
+    long endTime = System.nanoTime();
 
     // Verification
     boolean isCorrect = true;
@@ -72,6 +76,8 @@ public class p4p5 {
         break out;
       }
     }
-    System.out.println(isCorrect);
+    System.out.println("Answer is correct: " + isCorrect);
+    System.out.println("Running time: " + (endTime - startTime) / 1000000000.0 + "sec");
+    System.out.println("Running time / N: " + (endTime - startTime) / N + "nanosec");
   }
 }
