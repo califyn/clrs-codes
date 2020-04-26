@@ -34,8 +34,6 @@ public class p4p5 {
         sum += isGood[i] ? 1 : 0;
       }
     } while (2 * sum <= N);
-    System.out.println(sum);
-    System.out.println(Arrays.toString(isGood));
 
     // Finding one good switch
     LinkedList<Integer> left = new LinkedList<Integer>();
@@ -51,12 +49,10 @@ public class p4p5 {
       }
       results = switchOutput(isGood[a] ? 1 : 0, isGood[b] ? 1 : 0);
       if(results[0] == 1 && results[1] == 1){
-        System.out.println(a + " " + b);
         left.add(a);
       }
     }
     good = left.poll();
-    System.out.println(good);
 
     // Results
     boolean[] output = new boolean[N];
