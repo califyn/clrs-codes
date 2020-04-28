@@ -3,7 +3,7 @@ import java.util.*;
 
 // Solution code for Exercise 2.3-7 in CLRS, 3rd ed.
 
-public class e2p3d7 {
+public class Exercise_2_3_7 {
   public static int[] merge(int p, int q, int r, int[] arr){
     int[] a = Arrays.copyOfRange(arr, p, q);
     int[] b = Arrays.copyOfRange(arr, q, r);
