@@ -35,15 +35,15 @@ public class randompermute {
   public static void main(String[] args){
     // Examples of usage
     int[] arr = new int[]{3, 1, 4, 2, 5, 3};
-    System.out.println("Original array: " + Arrays.toString(arr));
+    // System.out.println("Original array: " + Arrays.toString(arr));
 
     // Random permutation of arr
     arr = randompermutation(arr);
-    System.out.println("After random permutation: " + Arrays.toString(arr));
+    // System.out.println("After random permutation: " + Arrays.toString(arr));
 
     // Random sample of size 2 from arr
     int[] sample = randompermutation(arr, 2);
-    System.out.println("A random sample: " + Arrays.toString(sample));
+    // System.out.println("A random sample: " + Arrays.toString(sample));
   }
 
 
