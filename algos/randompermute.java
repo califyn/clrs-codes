@@ -21,29 +21,15 @@ public class randompermute {
     return arr;
   }
 
-  static HashMap<Integer, Integer> randomsample_g(int m, int n){
-    if(m == 0){
-      return new HashMap<Integer, Integer>();
-    } else {
-      HashMap<Integer, Integer> S = randomsample_g(m - 1, n - 1);
-      int i = interrandom(0, n);
-      if(S.containsKey(i)){
-        S.put(n - 1, -1);
-      } else {
-        S.put(i, -1);
-      }
-      return S;
-    }
-  }
-
-  public static int[] randomsample(int[] arr, int m){
-    Object[] indices = randomsample_g(m, arr.length).keySet().toArray();
-    int[] out = new int[m];
+  public static int[] randompermutation(int[] arr, int m){
+    int r, temp;
     for(int i = 0; i < m; i++){
-      out[i] = arr[(Integer) indices[i]];
+      r = interrandom(i, arr.length);
+      temp = arr[i];
+      arr[i] = arr[r];
+      arr[r] = temp;
     }
-    out = randompermutation(out);
-    return out;
+    return Arrays.copyOfRange(arr, 0, m);
   }
 
   public static void main(String[] args){
@@ -56,7 +42,7 @@ public class randompermute {
     System.out.println("After random permutation: " + Arrays.toString(arr));
 
     // Random sample of size 2 from arr
-    int[] sample = randomsample(arr, 2);
+    int[] sample = randompermutation(arr, 2);
     System.out.println("A random sample: " + Arrays.toString(sample));
   }
 
