@@ -70,7 +70,6 @@ public class Exercise_4_1_5 {
     int max_left = max_subarray_med(a);
     int max_right = max_subarray_med(b);
     int max_cross = max_crossing_subarray(arr);
-    //System.out.println(max_left + " " + max_right + " " + max_cross + " " + Arrays.toString(arr));
     return max(max_left, max_right, max_cross);
   }
 
@@ -88,7 +87,6 @@ public class Exercise_4_1_5 {
     int max_left = max_subarray_med(a);
     int max_right = max_subarray_med(b);
     int max_cross = max_crossing_subarray(arr);
-    //System.out.println(max_left + " " + max_right + " " + max_cross + " " + Arrays.toString(arr));
     return max(max_left, max_right, max_cross);
   }
 
@@ -120,7 +118,6 @@ public class Exercise_4_1_5 {
       for(int i = 0; i < N; i++){
         a[i] = rand.nextInt(2 * N) - N;
       }
-      //System.out.println(Arrays.toString(a));
 
       long startTime, endTime;
 
@@ -143,10 +140,6 @@ public class Exercise_4_1_5 {
       int fast = max_subarray_fast(a);
       endTime = System.nanoTime();
       fastTime += endTime - startTime;
-      //System.out.println(fast + " " + medO);
-
-      //System.out.println(slow + " in " + slowTime);
-      //System.out.println(med + " in " + medTime);
 
     }
     System.out.println("Average time (Brute-force): " + (float) slowTime / R);
