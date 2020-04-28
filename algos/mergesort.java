@@ -46,6 +46,10 @@ public class mergesort {
   public static void main(String[] args){
     // Example of usage
     int[] arr = new int[]{5, 1, 2, 4, 3, 3};
+    //System.out.println("Original array: " + Arrays.toString(arr));
+    
     arr = mergesort(arr);
+    //System.out.println("After merge sort: " + Arrays.toString(arr));
   }
+
 }
