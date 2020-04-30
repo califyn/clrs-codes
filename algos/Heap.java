@@ -25,7 +25,7 @@ public class Heap {
   // Left child
   public int left(int i){
     if(i > (list.size() - 2)/2){
-      throw new ArrayIndexOutOfBoundsException();
+      throw new IndexOutOfBoundsException();
     } else {
       return (i << 1) + 1;
     }
@@ -34,7 +34,7 @@ public class Heap {
   // Right child
   public int right(int i){
     if(i > (list.size() - 3)/2){
-      throw new ArrayIndexOutOfBoundsException();
+      throw new IndexOutOfBoundsException();
     } else {
       return (i << 1) + 2;
     }
@@ -51,7 +51,7 @@ public class Heap {
   // Parent
   public int parent(int i){
     if(i < 1 || i >= list.size()){
-      throw new ArrayIndexOutOfBoundsException();
+      throw new IndexOutOfBoundsException();
     } else {
       return (i - 1) >> 1;
     }
