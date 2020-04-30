@@ -2,14 +2,17 @@ import java.io.*;
 import java.util.*;
 import java.lang.*;
 
-// Implemented version of Binary Heaps, heapsort, priority queues (see Chapter 6)
+// Implemented version of Heaps, heapsort, priority queues (see Chapter 6)
+// Typically binary unless a number d (for a d-ary heap) is specified
 
 // To change to a minheap: override canbeabove (example below)
 
 public class Heap {
   ArrayList<Integer> list = new ArrayList<Integer>();
+  int d = 2;
 
   // Operation for if a's value can be above b's value.
+  // Override this for min heaps, other kind of heaps. (see example)
   public boolean canbeabove(int a, int b){
     return list.get(a) >= list.get(b);
   }
@@ -22,30 +25,17 @@ public class Heap {
     return b;
   }
 
-  // Left child
-  public int left(int i){
-    if(i > (list.size() - 2)/2){
-      throw new IndexOutOfBoundsException();
-    } else {
-      return (i << 1) + 1;
-    }
-  }
-
-  // Right child
-  public int right(int i){
-    if(i > (list.size() - 3)/2){
-      throw new IndexOutOfBoundsException();
-    } else {
-      return (i << 1) + 2;
-    }
-  }
-
   // Largest child
   public int maxchild(int i){
-    try{
-      return top(left(i), right(i));
-    } catch (IndexOutOfBoundsException a){ }
-    return left(i);
+    int ind = d * i + 1;
+    int maxInd = ind;
+    do {
+      if(canbeabove(ind, maxInd)){
+        maxInd = ind;
+      }
+      ind++;
+    } while (ind < list.size() && ind <= (i + 1)* d);
+    return maxInd;
   }
 
   // Parent
@@ -53,12 +43,22 @@ public class Heap {
     if(i < 1 || i >= list.size()){
       throw new IndexOutOfBoundsException();
     } else {
-      return (i - 1) >> 1;
+      return (i - 1) / d;
     }
   }
 
   // Constructor
   public Heap(int[] toAdd){
+    this.d = 2;
+    this.list = new ArrayList<Integer>();
+    for(int i = 0; i < toAdd.length; i++){
+      this.list.add(toAdd[i]);
+    }
+    this.buildheap();
+  }
+
+  public Heap(int[] toAdd, int d){
+    this.d = d;
     this.list = new ArrayList<Integer>();
     for(int i = 0; i < toAdd.length; i++){
       this.list.add(toAdd[i]);
@@ -80,7 +80,7 @@ public class Heap {
   void heapify(int i){
     int ind = i;
     int replace, temp;
-    while(2 * ind < list.size() - 1){
+    while(d * ind < list.size() - 1){
       replace = top(maxchild(ind), ind);
       if(ind == replace){
         break;
@@ -140,7 +140,7 @@ public class Heap {
 
   // Creates a new heap
   void buildheap(){
-    for(int i = list.size() / 2; i >= 0; i--){
+    for(int i = list.size() / d + 1; i >= 0; i--){
       heapify(i);
     }
   }
@@ -177,6 +177,15 @@ public class Heap {
     /* for(int i = 0; i < 3; i++){
       System.out.print(myheap.pop());
     } */
+
+    // Ternary heap example
+    myheap = new Heap(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 3);
+    /* for(int i = 0; i < 10; i++){
+      System.out.print(myheap.list.get(i) + " ");
+    }
+    System.out.println(); */
+    sorted = myheap.heapsort();
+    // System.out.println(Arrays.toString(sorted));
   }
 
 }
