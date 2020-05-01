@@ -62,9 +62,9 @@ public class quicksort {
 
   public static void main(String[] args){
     int[] arr = new int[]{3, 1, 5, 2, 4, 3};
-    System.out.println("Array before sorting: " + Arrays.toString(arr));
+    // System.out.println("Array before sorting: " + Arrays.toString(arr));
     arr = quicksort(arr);
-    System.out.println("Array after sorting: " + Arrays.toString(arr));
+    // System.out.println("Array after sorting: " + Arrays.toString(arr));
   }
 
 }
