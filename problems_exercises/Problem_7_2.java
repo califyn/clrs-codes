@@ -24,7 +24,7 @@ public class Problem_7_2 {
     }
     swap(arr, i, r - 1);
     int k = i;
-    for(int j = i + 1; j < r - 1; j++){
+    for(int j = i + 1; j < r; j++){
       if(arr[j] == val){
         k++;
         swap(arr, j, k);
