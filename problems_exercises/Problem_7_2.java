@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-// Implemented version of Quick Sort (see Chapter 7)
+// Implemented version of Problem 7.2 in CLRS, 3rd ed.
 
 public class Problem_7_2 {
   static Random rand = new Random();
