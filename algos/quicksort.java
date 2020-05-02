@@ -53,6 +53,7 @@ public class quicksort {
         }
       }
     } while (!pass);
+    return arr;
   }
 
   static int[] quicksort(int[] arr){
