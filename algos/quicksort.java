@@ -6,6 +6,16 @@ import java.util.*;
 public class quicksort {
   static Random rand = new Random();
 
+  static int median(int a, int b, int c){
+    if((a >= b && a >= c) || (a <= b && a >= c)){
+      return a;
+    }
+    if((b >= c && b <= a) || (b >= a && b <= c)){
+      return b;
+    }
+    return c;
+  }
+
   static void swap(int[] arr, int a, int b){
     int temp = arr[b];
     arr[b] = arr[a];
@@ -35,7 +45,7 @@ public class quicksort {
 
   static void quicksort_g(int[] arr, int p, int r){
     if(p < r - 6){ // Exercise 7.4-5: leaving some things down to a bubblesort (instead of insertion sort; variation)
-      int q = rand.nextInt(r - p) + p;
+      int q = median(rand.nextInt(r - p) + p, rand.nextInt(r - p) + p, rand.nextInt(r - p) + p); // median of 3
       int ind = partition(arr, p, q, r);
       quicksort_g(arr, p, ind);
       quicksort_g(arr, ind + 1, r);
