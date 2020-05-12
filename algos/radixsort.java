@@ -28,6 +28,9 @@ public class radixsort {
   }
 
   public static int[][] radixsort(int[][] arr){ // Radix sort : sorts multicolumn data in O(d(n + k)) time
+    if(arr.length == 0){
+      return new int[][]{{}};
+    }
     int[] indices = new int[arr.length];
     for(int i = 0; i < arr.length; i++){
       indices[i] = i;
