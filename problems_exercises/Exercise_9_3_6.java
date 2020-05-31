@@ -49,7 +49,6 @@ public class Exercise_9_3_6 {
   }
 
   static int select_g(int[] arr, int p, int r, int i){
-    //3System.out.println(Arrays.toString(arr) + " " + p + " " + r + " " + i + "...");
     if (r > arr.length){
       r = arr.length;
     }
@@ -76,7 +75,6 @@ public class Exercise_9_3_6 {
     int[] ret = new int[k - 1];
     for (int lvl = (int) Math.ceil(Math.log(k - 1) / Math.log(2)); lvl > 0; lvl--){
       int x = (int) Math.floor(Math.pow(2, lvl - 1));
-      System.out.println(lvl + " " + x+ " asdas");
       do {
         ret[x] = select_g(arr, kth_qindex(arr.length, k, x - (int) Math.floor(Math.pow(2, lvl - 1))),
                             kth_qindex(arr.length, k, x + (int) Math.floor(Math.pow(2, lvl - 1))),
