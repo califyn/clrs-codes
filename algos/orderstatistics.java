@@ -64,21 +64,8 @@ public class orderstatistics {
     }
   }
 
-  static int select(int[] arr, int i){
+  static int select(int[] arr, int i){ // O(n) average-case (randomized) time complexity; more simple
     return select_g(arr, 0, arr.length, i);
-  }
-
-  static String ArrayListString(ArrayList<Integer> arr){
-    if(arr.size() == 0){
-      return "[]";
-    }
-    String s = "[";
-    for(int i = 0; i < arr.size(); i++){
-      s = s + Integer.toString(arr.get(i)) + ", ";
-    }
-    s = s.substring(0, s.length() - 2);
-    s = s + "]";
-    return s;
   }
 
   static int[] bubble_sort(int[] arr){
@@ -188,7 +175,7 @@ public class orderstatistics {
     }
   }
 
-  static int Select(int[] arr, int k){
+  static int Select(int[] arr, int k){ // O(n) worst-case time complexity; more complex
     int ret = Select_g(arr, 0, 0, arr.length, k, -1);
     ret = arr[ret];
     return ret;
