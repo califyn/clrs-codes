@@ -3,7 +3,7 @@ import java.util.*;
 
 // Solution code for Problem 5.2 in CLRS, 3rd ed.
 
-public class Problem_5_2 {
+public class Problem_05_2 {
   static Random rand = new Random();
 
   static int interrandom(int a, int b){

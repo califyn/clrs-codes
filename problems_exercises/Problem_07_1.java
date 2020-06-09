@@ -3,7 +3,7 @@ import java.util.*;
 
 // Solution code for Problem 7.1 part (e) in CLRS, 3rd ed.
 
-public class Problem_7_1 {
+public class Problem_07_1 {
 
   static Random rand = new Random();
 

@@ -3,7 +3,7 @@ import java.util.*;
 
 // Solution code for Problem 4.5 in CLRS, 3rd ed.
 
-public class Problem_4_5 {
+public class Problem_04_5 {
   static Random rand = new Random();
 
   // Simulating switch behavior

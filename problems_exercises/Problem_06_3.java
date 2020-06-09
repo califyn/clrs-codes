@@ -218,7 +218,7 @@ class YoungTableau {
   }
 }
 
-public class Problem_6_3 {
+public class Problem_06_3 {
 
   public static void main(String[] args){
     // Creation and ordering of the tableau (part A)

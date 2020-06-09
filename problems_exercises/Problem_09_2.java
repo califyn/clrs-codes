@@ -3,7 +3,7 @@ import java.util.*;
 
 // Implemented version of Problem 9.2 part (c) in CLRS, 3rd ed.
 
-public class Problem_9_2 {
+public class Problem_09_2 {
   static Random rand = new Random();
 
   static void swap(int[] arr, int a, int b){

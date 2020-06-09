@@ -3,7 +3,7 @@ import java.util.*;
 
 // Implemented version of Exercise 8.2-4 in CLRS, 3rd ed.
 
-public class Exercise_8_2_4 {
+public class Exercise_08_2_4 {
 
   public static int[] rangepreprocessing(int[] arr){ // Counting sort: sorts an array of nonnegative integers in O(n + max) time
     int[] sorted = new int[arr.length];

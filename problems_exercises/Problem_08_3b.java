@@ -3,7 +3,7 @@ import java.util.*;
 
 // Implemented version of Problem 8.3 part (b) in CLRS, 3rd ed.
 
-public class Problem_8_3b {
+public class Problem_08_3b {
 
   public static int[] countDistribution(int[] arr){
     int max = Integer.MIN_VALUE;
