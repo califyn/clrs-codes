@@ -3,7 +3,7 @@ import java.util.*;
 
 // Implemented version of Problem 7.6 in CLRS, 3rd ed.
 
-public class Problem_7_6 {
+public class Problem_07_6 {
   static Random rand = new Random();
 
   static int median(int a, int b, int c){
