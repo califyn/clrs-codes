@@ -92,11 +92,11 @@ public class Hashtable {
 		h.insert(2);
 		h.insert(3);
 		h.insert(6);
-		System.out.println("After adding 1, 2, 3, 6:" + h.toString());
-		System.out.println("Is 1 in the list? " + h.search(1));
-		System.out.println("Is 4 in the list? " + h.search(4));
+		// System.out.println("After adding 1, 2, 3, 6:" + h.toString());
+		// System.out.println("Is 1 in the list? " + h.search(1));
+		// System.out.println("Is 4 in the list? " + h.search(4));
 		h.delete(3);
-		System.out.println("After deleting 3: " + h.toString());
+		// System.out.println("After deleting 3: " + h.toString());
 	}
 
 }
