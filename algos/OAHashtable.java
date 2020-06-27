@@ -45,7 +45,7 @@ public class OAHashtable {
 		int i = 0;
 	x:	do {
 			int j = hashfunc(k, i);
-			if (arr[j] == -1){
+			if (arr[j] < 0){
 				arr[j] = k;
 				break x;
 			} else {
@@ -86,10 +86,26 @@ public class OAHashtable {
 	@Override
 	public String toString() {
 		String ret = "";
+		int empty = 0;
+		int deleted = 0;
 		for (int i = 0; i < size; i++){
 			if (arr[i] >= 0){
 				ret += arr[i] + ", ";
+			} else if (arr[i] == -1){
+				empty++;
+			} else if(arr[i] == -2){
+				deleted++;
 			}
+		}
+		ret = ret.substring(0, ret.length() - 2);
+		ret += " || Deleted: " + deleted + " objs, Empty: " + empty + " objs";
+		return ret;
+	}
+
+	public String rawToString() {
+		String ret = "";
+		for (int i = 0; i < size; i++){
+			ret += arr[i] + ", ";
 		}
 		ret = ret.substring(0, ret.length() - 2);
 		return ret;
@@ -108,5 +124,7 @@ public class OAHashtable {
 		h.delete(8);
 		//System.out.println("Hash table after 1, 8 deleted: " + h.toString());
 		//System.out.println("The element 6: " + h.arr[h.search(6)]);
+		h.insert(8);
+		//System.out.println("After 8 is added back in: " + h.toString());
 	}
 }
